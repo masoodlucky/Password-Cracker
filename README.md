@@ -1,20 +1,30 @@
-# password-cracker
-Basic password cracker as a proof-of-concept for educational purposes. Given a hash and a cracking technique, the program applies the technique to recover the original password from the hash. This project is intended as a learning material for my [video](https://www.youtube.com/watch?v=Z8nGpUOQPaA&feature=youtu.be) about password cracking on my [Youtube channel](https://www.youtube.com/channel/UCMzZh0q-rcd9yDEOTXAH90g).
+Password Cracker Tool
 
-## Requirements
+Overview:
+The Password Cracker is a basic proof-of-concept tool designed for educational purposes. It allows users to recover original passwords from hashes using various cracking techniques.
 
-You need to have [Python2](https://www.python.org/downloads/release/python-2716/) installed to run the script.
+Requirements:
 
-## Usage
+Python Version: Ensure you have Python 2.7 installed to run the script. You can download it from https://www.python.org/downloads/release/python-2716/.
+How to Use:
+To run the Password Cracker, execute the following command in your terminal:
+python password_cracker.py <hash> <attack>
 
-You can run the password cracker with the command `python password_cracker.py`. It takes two positional arguments : the hash to crack and the attack to run. It takes different optional arguments depending on the attack chosen. You can find all parameters with `python password_cracker.py --help`
+Arguments:
+<hash>: The hash you want to crack.
+<attack>: The cracking technique you wish to apply.
+Optional Arguments:
+Different attacks support additional optional parameters. You can view all available options with the command:
+python password_cracker.py --help
 
-Possible attacks are :
-- `brute_force` : Tries all possible alphanumerical passwords with length smaller or equal to `--length_max`.
-- `dict` : Tries all passwords contained in a dictionary file provided by `--dictionary`.
-- `dict_repl` : Tries all passwords contained in a dictionary file provided by `--dictionary` and for each password it tries passwords obtained by replacements given by `--replacements`. A replacement replaces all occurences of the old char by the new char in the password.
-- `targeted` : Tries all possible permutations of all possible subsets of a list of words given by `--words`.
+Available Cracking Techniques:
+1. Brute Force:
+Tries all possible alphanumeric passwords with a length of up to --length_max.
+2. Dictionary Attack:
+Uses passwords contained in a specified dictionary file provided by --dictionary.
+3. Dictionary with Replacements:
+Similar to the dictionary attack, but for each password in the dictionary, it also tries variations based on character replacements specified by --replacements.
+4. Targeted Attack:
+Attempts all possible permutations of subsets of a list of words specified by --words.
 
-## Contributing
 
-There is no license (see UNLICENSE.txt) so feel free to clone the project and make improvements, there are so many that you can try to implement!
